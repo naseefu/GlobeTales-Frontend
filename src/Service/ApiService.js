@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default class ApiServices{
 
-  static BASE_URL = "http://localhost:8080"
+  static BASE_URL = "https://globetales-server-4.onrender.com"
 
   static getheaders(){
     const token = localStorage.getItem('token');
