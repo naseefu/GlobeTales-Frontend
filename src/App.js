@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import AddEditor from './Component/Add Blog/AddEditor';
+import TravelBlog from './Component/Home/Home';
+import ParallaxComponent from './Component/Home/Test';
+import TravelBlogComponent from './Component/Blog Page/TravelBlogComponent';
+import Register from './Component/Auth/Register';
+import FullBlog from './Component/Blog Page/FullBlog';
+import AddBlog from './Component/Add Blog/AddBlog';
+import Signin from './Component/Auth/Signin';
+import Test from './Component/Home/Test';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path='/' element={<TravelBlog/>}/>
+          <Route path='/test' element={<Test/>}/>
+          <Route path="/add-blog" element={<AddBlog />} />
+          <Route path="/blog-page/:id" element={<TravelBlogComponent />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/sign-in" element={<Signin />} />
+          <Route path="/all-blogs/:num" element={<FullBlog />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
